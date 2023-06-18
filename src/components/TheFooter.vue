@@ -42,7 +42,11 @@ nav a.router-link-exact-active {
   color: white;
 }
 .footer__container {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 10px 10px 0px 10px;
-  margin-top: auto;
+  width: 100%;
 }
 </style>
