@@ -33,7 +33,8 @@ nav a.router-link-exact-active {
 }
 .footer__container {
   background-color: #101522;
-  padding: 10px 10px 0px 10px;
-  margin-top: auto;
+    padding: 10px 10px 0px 10px;
+    position: relative;
+    top: 261px;
 }
 </style>
