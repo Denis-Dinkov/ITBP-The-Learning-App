@@ -15,47 +15,35 @@ export default {
 
 <style>
 nav {
-  padding: 48px 24px;
+  padding: 1rem;
 }
 
 .footer__links > a {
   font-weight: bold;
   color: #f1faf5;
   text-decoration: none;
-  padding: 10px;
+  padding: 0.5rem;
 }
-.footer__links > :hover {
+
+.footer__links > a:hover {
   color: #459fec;
 }
 
 nav a.router-link-exact-active {
   color: #459fec;
 }
+
 .footer__container {
   background-color: #101522;
-    padding: 10px 10px 0px 10px;
-    position: relative;
-    top: 261px;
+  padding: 1rem;
 }
-@media only screen and (max-width: 1024px) {
-  .border__table {
-    overflow-x: auto;
-  }
 
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 30px;
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 30px;
+@media screen and (max-width: 1024) {
+  /* Styles for screens smaller than 768px */
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 </style>
