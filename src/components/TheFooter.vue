@@ -37,4 +37,25 @@ nav a.router-link-exact-active {
     position: relative;
     top: 261px;
 }
+@media only screen and (max-width: 1024px) {
+  .border__table {
+    overflow-x: auto;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 30px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 30px;
+  }
+}
 </style>

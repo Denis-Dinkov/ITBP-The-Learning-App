@@ -21,4 +21,26 @@ body p{
     letter-spacing: 0.4px;
     margin: 41px;
 }
+
+@media only screen and (max-width: 1280px) {
+  .border__table {
+    overflow-x: auto;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 30px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 30px;
+  }
+}
 </style>
