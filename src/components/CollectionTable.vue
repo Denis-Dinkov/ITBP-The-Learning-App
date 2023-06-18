@@ -253,25 +253,5 @@ thead th span.icon-arrow {
   transition: 0.2s ease-in-out;
 }
 
-thead th:hover span.icon-arrow {
-  border: 1.4px solid #6c00bd;
-}
 
-thead th:hover {
-  color: #6c00bd;
-}
-
-thead th.active span.icon-arrow {
-  background-color: #6c00bd;
-  color: #fff;
-}
-
-thead th.asc span.icon-arrow {
-  transform: rotate(180deg);
-}
-
-thead th.active,
-tbody td.active {
-  color: #6c00bd;
-}
 </style>

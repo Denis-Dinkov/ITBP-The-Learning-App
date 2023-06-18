@@ -17,18 +17,16 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2F5760;
+  background-color: #fff8;
   top: 0;
   z-index: 100;
 }
 .header > span {
   padding: 25px;
-  color: #459fec;
-  font-size: 25px;
+  font-size: 31px;
+  color: black;
 }
-.header > span:hover {
-  color: #f1faf5;
-}
+
 .header > img {
   width: 65px;
   object-fit: contain;
