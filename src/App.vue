@@ -16,10 +16,10 @@
   text-align: center;
   color: #2c3e50;
   min-height: 100vh;
-  max-height: 100vh;
   display: flex;
   flex-direction: column;
-  
+  background-color: #2c3e50;
+
 }
 html {
   font-family: "Roboto", sans-serif;

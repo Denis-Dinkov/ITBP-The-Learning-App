@@ -15,35 +15,25 @@ export default {
 
 <style>
 nav {
-  padding: 1rem;
+  padding: 48px 24px;
 }
 
 .footer__links > a {
   font-weight: bold;
   color: #f1faf5;
   text-decoration: none;
-  padding: 0.5rem;
+  padding: 10px;
 }
-
-.footer__links > a:hover {
+.footer__links > :hover {
   color: #459fec;
 }
 
 nav a.router-link-exact-active {
   color: #459fec;
 }
-
 .footer__container {
   background-color: #101522;
-  padding: 1rem;
-}
-
-@media screen and (max-width: 1024) {
-  /* Styles for screens smaller than 768px */
-  .footer__links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  padding: 10px 10px 0px 10px;
+  margin-top: auto;
 }
 </style>
