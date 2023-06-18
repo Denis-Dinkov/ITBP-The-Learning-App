@@ -40,7 +40,7 @@
       <div class="form-group mt-3">
         <label>Image</label>
         <input
-          v-model="form.image"
+          v-model="form.img"
           class="form-control"
           placeholder="Copy image url from the Internet"
         />
@@ -64,7 +64,7 @@ export default {
       description: "",
       lessons: "",
       date: "",
-      image: "",
+      img: "",
       state: "Active",
     });
 
@@ -75,7 +75,7 @@ export default {
       form.description = "";
       form.lessons = "";
       form.date = "";
-      form.image = "";
+      form.img = "";
     };
 
     return { form, onSubmit };
@@ -85,6 +85,7 @@ export default {
 
 <style scoped>
 .form__container {
+  color:black;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -104,6 +105,7 @@ export default {
 }
 .create__btn {
   text-decoration: none;
+  margin: 28px 0px;
   background: #101522;
   color: #f1faf5;
   padding: 10px;

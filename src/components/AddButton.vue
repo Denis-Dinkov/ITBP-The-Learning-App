@@ -12,7 +12,7 @@ export default {
 
 <style>
 .add__courseLink {
-  margin: 118px;
+  margin: 40px;
 }
 .add__courseLink > a {
   text-decoration: none;

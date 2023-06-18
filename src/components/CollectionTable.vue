@@ -34,8 +34,8 @@
             <td>{{ lessons }}</td>
             <td>
               <select class="dropdown">
-                <option value="active">{{ state }}</option>
-                <option value="archived">Archived</option>
+                <option value="Active">{{ state }}</option>
+                <option value="Archived">Archived</option>
               </select>
             </td>
             <td>

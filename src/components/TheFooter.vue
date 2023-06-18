@@ -40,6 +40,8 @@ nav a.router-link-exact-active {
   background-color: #101522;
   border-color: #101522;
   color: white;
+  position: relative; /* Add this line */
+  z-index: 2; 
 }
 .footer__container {
   position: fixed;

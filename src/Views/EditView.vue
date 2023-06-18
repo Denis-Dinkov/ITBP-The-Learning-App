@@ -61,7 +61,7 @@ export default {
       form.lessons = course.lessons;
       form.description = course.description;
       form.date = course.date;
-      form.img = course.image;
+      form.img = course.img
     });
 
     const update = async () => {
