@@ -7,7 +7,7 @@
 
 <style scoped>
 body{
-  margin: 146px  auto;
+  margin: 325px  auto;
     text-align: center;
 }
 body h1{
