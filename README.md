@@ -1,4 +1,4 @@
-# the-learning-app
+# project
 
 ## Project setup
 ```
