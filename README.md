@@ -1,4 +1,4 @@
-# Live Demo - https://learning-73eac.web.app/learning
+# Live Demo - https://learning-73eac.web.app
 
 ## Project setup
 ```
