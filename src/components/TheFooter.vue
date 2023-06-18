@@ -25,14 +25,14 @@ nav {
   padding: 10px;
 }
 .footer__links > :hover {
-  color: #459fec;
+  color: #60AFFF;
 }
 
 nav a.router-link-exact-active {
-  color: #459fec;
+  color: #60AFFF;
 }
 .footer__container {
-  background-color: #101522;
+  background-color: #2F5760;
   padding: 10px 10px 0px 10px;
   margin-top: auto;
 }

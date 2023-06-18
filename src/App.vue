@@ -14,12 +14,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #2F5760;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #2c3e50;
-
+  background-color: #F3E8EE;
 }
 html {
   font-family: "Roboto", sans-serif;

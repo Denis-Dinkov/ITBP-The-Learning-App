@@ -1,6 +1,6 @@
 <template>
   <div class="learning__info">
-    <h1>{{ msg }}</h1>
+    <h1>The Learning App</h1>
     <p>
       Welcome to The Learning App, place on the web where knowledge is found!
       Learning is a CMS-Content Management System. Single-page application where
@@ -13,12 +13,7 @@
 </template>
 
 <script>
-export default {
-  name: "LearningInfo",
-  props: {
-    msg: String,
-  },
-};
+
 </script>
 
 <style scoped>
@@ -32,10 +27,8 @@ export default {
   font-size: 65px;
   letter-spacing: 1.4px;
   margin: 50px;
-  color: #f1faf5;
 }
 .learning__info > p {
-  color: #f1faf5;
   line-height: 16px;
   font-weight: 700;
   letter-spacing: 1.4px;
