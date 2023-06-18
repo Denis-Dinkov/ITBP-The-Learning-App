@@ -2,12 +2,7 @@
   <div class="learning__info">
     <h1>The Learning App</h1>
     <p>
-      Welcome to The Learning App, place on the web where knowledge is found!
-      Learning is a CMS-Content Management System. Single-page application where
-      admins can add new content for the user part of the application.The can
-      create courses with short description about the course, the date, the
-      count of lessons and is it still active. Admins can also edit and delete
-      them!
+      Welcome to The Learning App, where knowledge awaits! Our app enables admins to effortlessly create, edit, and delete courses for our users. Join us for an exciting journey of learning!
     </p>
   </div>
 </template>
@@ -25,14 +20,16 @@
   justify-content: space-evenly;
 }
 .learning__info > h1 {
-  text-decoration: underline;
-  font-size: 65px;
+  text-decoration: none;
+  font-size: 75px;
   letter-spacing: 1.4px;
   margin: 50px;
   padding: 40px
 }
 .learning__info > p {
-  line-height: 16px;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 96px;
   font-weight: 700;
   letter-spacing: 1.4px;
   margin: 30px;

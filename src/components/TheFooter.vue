@@ -27,12 +27,12 @@ nav {
   text-decoration: none;
   border-radius: 20px;
   padding: 0.75rem 1.5rem;
-  color: #270041;
+  color: #101522;
   cursor: pointer;
 }
 .footer__links > :hover {
-  background-color: #270041;
-  border-color: #270041;
+  background-color: #101522;
+  border-color: #101522;
   color: white;
 }
 

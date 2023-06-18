@@ -1,59 +1,55 @@
 <template>
   <div class="border__table">
-    <table class="table table-dark">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Course name</th>
-          <th scope="col">Description</th>
-          <th scope="col">Lessons</th>
-          <th scope="col">State</th>
-          <th scope="col">Date added</th>
-          <th scope="col">Image</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="{
-            id,
-            name,
-            lessons,
-            description,
-            date,
-            image,
-            state,
-          } in courses"
-          :key="id"
-        >
-          <td>{{ id }}</td>
-          <td>{{ name }}</td>
-          <td>{{ description }}</td>
-          <td>{{ lessons }}</td>
-          <td>
-            <select class="dropdown">
-              <option value="active">{{ state }}</option>
-              <option value="archived">Archived</option>
-            </select>
-          </td>
-          <td>{{ date }}</td>
-          <td><img v-bind:src="image" /></td>
-          <td>
-            <router-link :to="`/edit/${id}`">
-              <button class="table_btn">Edit</button>
-            </router-link>
-            <button class="table_btn" @click="deleteCourse(id)">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <section class="table__body">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Lessons</th>
+            <th scope="col">State</th>
+            <th scope="col">Date added</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="{
+              id,
+              name,
+              description,
+              lessons,
+              state,
+              date,
+            } in courses"
+            :key="id"
+          >
+            <td>{{ id }}</td>
+            <td>{{ name }}</td>
+            <td>{{ description }}</td>
+            <td>{{ lessons }}</td>
+            <td>
+              <p class="status delivered">{{ state }}</p>
+            </td>
+            <td>
+              <strong> {{ date }} </strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <add-button> </add-button>
   </div>
 </template>
 
 <script>
+import AddButton from "./AddButton.vue";
 import { useLoadCourses, deleteCourse } from "@/firebase";
 
 export default {
+  components: {
+    AddButton,
+  },
   setup() {
     const courses = useLoadCourses();
     return { courses, deleteCourse };
@@ -61,51 +57,221 @@ export default {
 };
 </script>
 
-<style>
-.border__table {
-  margin: 25px;
+<style scoped>
+main.table {
+  width: 82vw;
+  height: 90vh;
+  background-color: #fff5;
+
+  backdrop-filter: blur(7px);
+  box-shadow: 0 0.4rem 0.8rem #0005;
+  border-radius: 0.8rem;
+
+  overflow: hidden;
 }
-td > img {
-  width: 55px;
-  object-fit: contain;
+
+.table__header {
+  width: 100%;
+  height: 10%;
+  background-color: #fff4;
+  padding: 0.8rem 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.table_btn {
-  text-decoration: none;
-  background: #101522;
-  color: #f1faf5;
-  padding: 10px;
-  border-radius: 25px;
-  margin: 3px;
+
+.table__header .input-group {
+  width: 35%;
+  height: 100%;
+  background-color: #fff5;
+  padding: 0 0.8rem;
+  border-radius: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.2s;
 }
-.table_btn:hover {
-  color: #459fec;
+
+.table__header .input-group:hover {
+  width: 45%;
+  background-color: #fff8;
+  box-shadow: 0 0.1rem 0.4rem #0002;
 }
-.dropdown {
-  border-radius: 10px;
+
+.table__header .input-group img {
+  width: 1.2rem;
+  height: 1.2rem;
 }
-.dropdown:hover {
+
+.table__header .input-group input {
+  width: 100%;
+  padding: 0 0.5rem 0 0.3rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.table__body {
+  width: 95%;
+  max-height: calc(89% - 1.6rem);
+  background-color: #fffb;
+
+  margin: 0.8rem auto;
+  border-radius: 0.6rem;
+
+  overflow: auto;
+  overflow: overlay;
+}
+
+.table__body::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: #0004;
+  visibility: hidden;
+}
+
+.table__body:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+table {
+  width: 100%;
+}
+
+td img {
+  width: 36px;
+  height: 36px;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+
+  vertical-align: middle;
+}
+
+table,
+th,
+td {
+  color: black;
+  border-collapse: collapse;
+  padding: 1rem;
+  text-align: left;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #d5d1defe;
   cursor: pointer;
+  text-transform: capitalize;
 }
 
-@media only screen and (max-width: 1024px) {
-  .border__table {
-    overflow-x: auto;
-  }
+tbody tr:nth-child(even) {
+  background-color: #0000000b;
+}
 
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
+tbody tr {
+  --delay: 0.1s;
+  transition: 0.5s ease-in-out var(--delay), background-color 0s;
+}
 
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 30px;
-  }
+tbody tr.hide {
+  opacity: 0;
+  transform: translateX(100%);
+}
 
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 30px;
+tbody tr:hover {
+  background-color: #fff6 !important;
+}
+
+tbody tr td,
+tbody tr td p,
+tbody tr td img {
+  transition: 0.2s ease-in-out;
+}
+
+tbody tr.hide td,
+tbody tr.hide td p {
+  padding: 0;
+  font: 0 / 0 sans-serif;
+  transition: 0.2s ease-in-out 0.5s;
+}
+
+tbody tr.hide td img {
+  width: 0;
+  height: 0;
+  transition: 0.2s ease-in-out 0.5s;
+}
+
+.status {
+  padding: 0.4rem 0;
+  border-radius: 2rem;
+  text-align: center;
+}
+
+.status.delivered {
+  background-color: #86e49d;
+  color: #006b21;
+}
+
+.status.cancelled {
+  background-color: #d893a3;
+  color: #b30021;
+}
+
+.status.pending {
+  background-color: #ebc474;
+}
+
+.status.shipped {
+  background-color: #6fcaea;
+}
+
+@media (max-width: 1000px) {
+  td:not(:first-of-type) {
+    min-width: 12.1rem;
   }
+}
+
+thead th span.icon-arrow {
+  display: inline-block;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  border: 1.4px solid transparent;
+
+  text-align: center;
+  font-size: 1rem;
+
+  margin-left: 0.5rem;
+  transition: 0.2s ease-in-out;
+}
+
+thead th:hover span.icon-arrow {
+  border: 1.4px solid #6c00bd;
+}
+
+thead th:hover {
+  color: #6c00bd;
+}
+
+thead th.active span.icon-arrow {
+  background-color: #6c00bd;
+  color: #fff;
+}
+
+thead th.asc span.icon-arrow {
+  transform: rotate(180deg);
+}
+
+thead th.active,
+tbody td.active {
+  color: #6c00bd;
 }
 </style>
