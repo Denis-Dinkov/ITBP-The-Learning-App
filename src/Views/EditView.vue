@@ -28,9 +28,9 @@
         <input v-model="form.date" class="form-control" type="date" required />
       </div>
 
-      <div class="form-group mt-3">
+      <div class="imageLabel">
         <label>Image</label>
-        <input v-model="form.image" class="form-control" />
+        <input v-model="form.img" class="form-control" />
       </div>
       <button type="submit" class="edit__btn">Update</button>
     </form>
@@ -53,7 +53,7 @@ export default {
       lessons: "",
       description: "",
       date: "",
-      image: "",
+      img: "",
     });
     onMounted(async () => {
       const course = await getCourse(courseId.value);
@@ -61,7 +61,7 @@ export default {
       form.lessons = course.lessons;
       form.description = course.description;
       form.date = course.date;
-      form.image = course.image;
+      form.img = course.image;
     });
 
     const update = async () => {
@@ -71,7 +71,7 @@ export default {
       form.lessons = "";
       form.description = "";
       form.date = "";
-      form.image = "";
+      form.img = "";
     };
 
     return { form, update };
@@ -81,10 +81,13 @@ export default {
 
 <style scoped>
 .edit__form__container {
+  color: black;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.form-group {
   margin: 10px;
 }
 .form__edit {
@@ -97,8 +100,10 @@ export default {
   border: none;
   padding: 20px;
   border-radius: 20px;
+  margin: 20px 0px;
 }
 .edit__btn {
+  margin: 28px 0px;
   text-decoration: none;
   background: #101522;
   color: #f1faf5;

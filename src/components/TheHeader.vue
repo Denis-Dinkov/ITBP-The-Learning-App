@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <span>Welcome student!</span>
+    <span>Welcome!</span>
     <img src="../Assets/student.png" />
   </div>
 </template>
@@ -13,11 +13,12 @@ export default {
 
 <style>
 .header {
+  font-weight: bold;
   height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff8;
+  background-color: #CEE5;
   top: 0;
   z-index: 100;
 }

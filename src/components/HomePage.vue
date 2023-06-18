@@ -2,17 +2,16 @@
   <div class="learning__info">
     <h1>The Learning App</h1>
     <p>
-      Welcome to The Learning App, where knowledge awaits! Our app enables admins to effortlessly create, edit, and delete courses for our users. Join us for an exciting journey of learning!
+      Welcome to The Learning App, where knowledge awaits! Our app enables
+      admins to effortlessly create, edit, and delete courses for our users.
+      Join us for an exciting journey of learning!
     </p>
   </div>
 </template>
 
-<script>
-
-</script>
+<script></script>
 
 <style scoped>
-
 .learning__info {
   border-radius: 12px;
   display: flex;
@@ -24,7 +23,7 @@
   font-size: 75px;
   letter-spacing: 1.4px;
   margin: 50px;
-  padding: 40px
+  padding: 40px;
 }
 .learning__info > p {
   font-size: 20px;

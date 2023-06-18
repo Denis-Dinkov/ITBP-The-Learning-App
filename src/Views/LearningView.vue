@@ -7,13 +7,14 @@
 </template>
 
 <script>
-  import TheHeader from '../components/TheHeader.vue'
-  import TheFooter from '../components/TheFooter.vue';
-  import CollectionTable from '../components/CollectionTable.vue'
-export default{
+import TheHeader from "../components/TheHeader.vue";
+import TheFooter from "../components/TheFooter.vue";
+import CollectionTable from "../components/CollectionTable.vue";
+export default {
   components: {
     TheFooter,
     CollectionTable,
     TheHeader,
-  }
-}</script>
+  },
+};
+</script>

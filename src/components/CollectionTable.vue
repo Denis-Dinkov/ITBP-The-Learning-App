@@ -5,17 +5,20 @@
         <thead>
           <tr>
             <th scope="col">Id</th>
+            <th scope="col">Image</th>
             <th scope="col">Name</th>
             <th scope="col">Description</th>
             <th scope="col">Lessons</th>
             <th scope="col">State</th>
             <th scope="col">Date added</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
           <tr
             v-for="{
               id,
+              img,
               name,
               description,
               lessons,
@@ -25,14 +28,24 @@
             :key="id"
           >
             <td>{{ id }}</td>
+            <td><img v-bind:src="img" /></td>
             <td>{{ name }}</td>
             <td>{{ description }}</td>
             <td>{{ lessons }}</td>
             <td>
-              <p class="status delivered">{{ state }}</p>
+              <select class="dropdown">
+                <option value="active">{{ state }}</option>
+                <option value="archived">Archived</option>
+              </select>
             </td>
             <td>
               <strong> {{ date }} </strong>
+            </td>
+            <td>
+              <router-link :to="`/edit/${id}`">
+                <button class="btn">Edit</button>
+              </router-link>
+              <button @click="deleteCourse(id)" class="btn">Delete</button>
             </td>
           </tr>
         </tbody>
@@ -252,6 +265,4 @@ thead th span.icon-arrow {
   margin-left: 0.5rem;
   transition: 0.2s ease-in-out;
 }
-
-
 </style>
