@@ -15,24 +15,33 @@ export default {
 
 <style>
 nav {
-  padding: 48px 24px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  margin: 12px 264px;
+  padding: 25px 24px;
 }
 
 .footer__links > a {
-  font-weight: bold;
-  color: #f1faf5;
+  margin: 1px 20px;
   text-decoration: none;
-  padding: 10px;
+  border-radius: 20px;
+  padding: 0.75rem 1.5rem;
+  color: #270041;
+  cursor: pointer;
 }
 .footer__links > :hover {
-  color: #60AFFF;
+  background-color: #270041;
+  border-color: #270041;
+  color: white;
 }
 
 nav a.router-link-exact-active {
-  color: #60AFFF;
+  background-color: #270041;
+  border-color: #270041;
+  color: white;
 }
 .footer__container {
-  background-color: #2F5760;
   padding: 10px 10px 0px 10px;
   margin-top: auto;
 }

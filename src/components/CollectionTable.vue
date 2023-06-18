@@ -15,24 +15,34 @@
       </thead>
       <tbody>
         <tr
+          v-for="{
+            id,
+            name,
+            lessons,
+            description,
+            date,
+            image,
+            state,
+          } in courses"
+          :key="id"
         >
-          <td> id </td>
-          <td> nam</td>
-          <td>description </td>
-          <td>lessons </td>
+          <td>{{ id }}</td>
+          <td>{{ name }}</td>
+          <td>{{ description }}</td>
+          <td>{{ lessons }}</td>
           <td>
             <select class="dropdown">
-              <option value="active"> state </option>
+              <option value="active">{{ state }}</option>
               <option value="archived">Archived</option>
             </select>
           </td>
-          <td> date </td>
-          <td></td>
+          <td>{{ date }}</td>
+          <td><img v-bind:src="image" /></td>
           <td>
-           
+            <router-link :to="`/edit/${id}`">
               <button class="table_btn">Edit</button>
-    
-            <button class="table_btn">Delete</button>
+            </router-link>
+            <button class="table_btn" @click="deleteCourse(id)">Delete</button>
           </td>
         </tr>
       </tbody>
@@ -40,7 +50,16 @@
   </div>
 </template>
 
+<script>
+import { useLoadCourses, deleteCourse } from "@/firebase";
 
+export default {
+  setup() {
+    const courses = useLoadCourses();
+    return { courses, deleteCourse };
+  },
+};
+</script>
 
 <style>
 .border__table {
@@ -66,5 +85,27 @@ td > img {
 }
 .dropdown:hover {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px) {
+  .border__table {
+    overflow-x: auto;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 30px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 30px;
+  }
 }
 </style>

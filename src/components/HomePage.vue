@@ -17,7 +17,9 @@
 </script>
 
 <style scoped>
+
 .learning__info {
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -27,6 +29,7 @@
   font-size: 65px;
   letter-spacing: 1.4px;
   margin: 50px;
+  padding: 40px
 }
 .learning__info > p {
   line-height: 16px;
